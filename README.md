@@ -1,2 +1,2 @@
-# video-call
-https://wa.hanapha.com/video-call/
+# chat
+https://wa.hanapha.com/chat/

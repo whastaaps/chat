@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #ece5dd;
+    margin: 0;
+    padding: 0
+}
+
+.container-wa {
+    max-width: 600px;
+    margin: auto;
+    background: #ece5dd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 720px;
+    overflow: hidden
+}
+
+.wa-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #075e54;
+    color: #fff;
+    padding: 10px
+}
+
+.wa-header-left {
+    display: flex;
+    align-items: center
+}
+
+.wa-header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px
+}
+
+.wa-header .name {
+    font-weight: 700
+}
+
+.wa-header .status {
+    font-size: 12px;
+    color: #cfcfcf
+}
+
+.wa-content {
+    flex: 1;
+    padding: 15px;
+    background: #dcf8c6;
+    background: url('../images/background.jpg') repeat;
+    background-size: auto;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    gap: 10px;
+    margin-bottom: 50px;
+    /* agar tidak ketutupan input bar */
+}
+
+img.chat-img {
+    width: 70%;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+img.chat-img.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bubble {
+    display: inline-block;
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 15px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all .45s ease;
+}
+
+.bubble.instruction {
+    background: #fff
+}
+
+.bubble.show {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.typing-dots {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    height: 12px
+}
+
+.typing-dots .dot {
+    width: 7px;
+    height: 7px;
+    background: #888;
+    border-radius: 50%;
+    opacity: .3;
+    animation: dot 1.2s infinite
+}
+
+.typing-dots .dot:nth-child(2) {
+    animation-delay: .15s
+}
+
+.typing-dots .dot:nth-child(3) {
+    animation-delay: .3s
+}
+
+@keyframes dot {
+
+    0%,
+    80%,
+    100% {
+        opacity: .25;
+        transform: translateY(0)
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(-4px)
+    }
+}
+
+.wa-input-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.wa-input {
+    flex: 1;
+    margin: 0 10px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 15px;
+    outline: none
+}
+
+.material-icons {
+    cursor: pointer;
+    color: #888;
+    font-size: 26px
+}
+
+/* Tombol lanjut video call */
+.btn-call {
+    background: #25D366;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: scale(.95);
+    transition: all .4s ease;
+}
+
+.btn-call.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.btn-call .material-icons {
+    font-size: 20px;
+    color: #fff;
+}
